@@ -4,9 +4,7 @@ JC = javac
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
-CLASSES = \
-	Solution2_1.java \
-	Main.java 
+CLASSES = Solution2_1.java
 
 default: classes
 
