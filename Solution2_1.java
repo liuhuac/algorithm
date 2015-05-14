@@ -10,24 +10,23 @@ public class Solution2_1{
 
 		print(list);
 
-		Map m = new HashMap();
-		int i = 0;
-		for(int v : list){
-			if(m.containsKey(v)){
-				list.remove(i);
+		Map<Integer,Integer> m = new HashMap<Integer, Integer>();
+		Iterator<Integer> it = list.iterator();
+		while(it.hasNext()){
+			if(m.containsKey(it.next())){
+				it.remove();
 			} else {
-				m.put(v,1);
+				m.put(it.next(),1);
 			}
-			i++;
 		}
 
 		print(list);
 	}
 
 	public void print(ArrayList<Integer> list){
-		String res = null;
+		String res = "";
 		for(int v : list){
-			res = String.format("%2d->",v);
+			res = res + String.format("%2d->",v);
 		}
 		System.out.println(res);
 	}
@@ -54,7 +53,7 @@ public class Solution2_1{
 		}*/
 
 		// test the algorithm
-		ArrayList al = new ArrayList();
+		ArrayList<Integer> al = new ArrayList<Integer>();
 		Random rn = new Random();
 		for(int i=0; i<10; i++){
 			al.add(rn.nextInt(10));
